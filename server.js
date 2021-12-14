@@ -16,7 +16,7 @@ db.sequelize.sync();
 // });
 
 var corsOptions = {
-  origin: "http://localhost:8080"
+  origin: "http://127.0.0.1:8889"
 };
 
 app.use(cors(corsOptions));
