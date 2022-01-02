@@ -3,6 +3,9 @@ const express = require("express");
 // cors provides Express middleware to enable CORS
 const cors = require("cors");
 
+// Helmet to protect well-known web vulnerabilites
+const helmet = require('helmet')
+
 const app = express();
 
 const db = require("./app/models");
@@ -16,8 +19,12 @@ db.sequelize.sync();
 // });
 
 var corsOptions = {
-  origin: "http://127.0.0.1:8889"
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  // origin: "http://127.0.0.1:8889"
 };
+
+app.use(helmet());
 
 app.use(cors(corsOptions));
 
