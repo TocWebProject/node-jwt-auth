@@ -1,7 +1,7 @@
 const config = require("../config/db.config.js");
 
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
+/*const sequelize = new Sequelize(
   config.DB,
   config.USER,
   config.PASSWORD,
@@ -10,7 +10,7 @@ const sequelize = new Sequelize(
     port: config.PORT,
     dialect: config.dialect,
     operatorsAliases: 0,
-    socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
+    //socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
 
     pool: {
       max: config.pool.max,
@@ -18,6 +18,18 @@ const sequelize = new Sequelize(
       acquire: config.pool.acquire,
       idle: config.pool.idle
     }
+  }
+);
+*/
+
+const sequelize = new Sequelize(
+	'node_js_secu',
+	'tp-secu',
+	'tp-secupass',
+  {
+	host: '127.0.0.1',
+	port: '3306',
+	dialect: 'mariadb',
   }
 );
 
